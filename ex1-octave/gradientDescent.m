@@ -10,13 +10,10 @@ J_history = zeros(num_iters, 1);
 	for i = 1:num_iters
 		
 		% Calculate the summation
+		delta = (X' * (X * theta - y))/m;
 		
-		h_theta = sum(theta' .* X, 2);
-		squared_diff = (h_theta - y).^2;
-		delta = (1/m) * sum((squared_diff .* X), 1);
-		
-		% Update theta (NB: delta transpose)
-		theta = theta - (alpha .* delta');
+		% Update theta
+		theta = theta - (alpha * delta);
 
     		% Save the cost J in every iteration    
     		J_history(i) = computeCost(X, y, theta);
