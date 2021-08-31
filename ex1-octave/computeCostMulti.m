@@ -5,5 +5,5 @@ function J = computeCostMulti(X, y, theta)
 
 	m = length(y); % number of training examples
 	h_theta = sum(theta'.X, 2);
-	J = (1/2*m)) * sum((h_theta - y).^2);
+	J = (1/(2*m)) * sum((h_theta - y).^2);
 end%function
