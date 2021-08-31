@@ -9,7 +9,7 @@ J_history = zeros(num_iters, 1);
 
 	for i = 1:num_iters
 		
-		% Calculate the summation
+		% Calculate the derivative
 		delta = (X' * (X * theta - y))/m;
 		
 		% Update theta
