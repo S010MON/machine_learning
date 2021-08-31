@@ -4,6 +4,6 @@ function J = computeCostMulti(X, y, theta)
 %   parameter for linear regression to fit the data points in X and y
 
 	m = length(y); % number of training examples
-	h_theta = sum(theta'.X, 2);
+	h_theta = sum(theta'.*X, 2);
 	J = (1/(2*m)) * sum((h_theta - y).^2);
 end%function
