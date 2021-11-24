@@ -10,10 +10,12 @@ J_history = zeros(num_iters, 1);
 	for iter = 1:num_iters
 		
 		% Calculate the derivative
-		delta = (X' * (X * theta - y))/m;
+		h_theta = sum(theta' .* X, 2);
 
 		% Update Theta
-		theta = theta - (alpha * delta);
+		for j = 1:length(theta)
+			theta(j) = theta(j) - (alpha/m * sum((h_theta - y).*X(1:end,j)))
+		end%for
 
 		% Save the cost J in every iteration    
 		J_history(iter) = computeCostMulti(X, y, theta);
