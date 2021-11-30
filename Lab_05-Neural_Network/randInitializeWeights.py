@@ -10,10 +10,6 @@ def randInitializeWeights(L_in, L_out):
 #   Note that W should be set to a matrix of size(L_out, 1 + L_in) as
 #   the first row of W handles the "bias" terms
 #
-
-# You need to return the following variables correctly 
-    W = np.zeros((L_out, 1 + L_in))
-
 # ====================== YOUR CODE HERE ======================
 # Instructions: Initialize W randomly so that we break the symmetry while
 #               training the neural network.
@@ -21,7 +17,11 @@ def randInitializeWeights(L_in, L_out):
 # Note: The first row of W corresponds to the parameters for the bias units
 #
 
+    A = np.ones((L_in,1))
+    B = np.random.rand(L_out, L_in)
 
+    C = np.hstack((A, np.atleast_2d(B).T)).T
+    W = C.T
     
 # =========================================================================
 
