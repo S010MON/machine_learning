@@ -15,7 +15,8 @@ def sigmoidGradient(z):
 # Instructions: Compute the gradient of the sigmoid function evaluated at
 #               each value of z (z can be a matrix, vector or scalar).
 
-
+    z_s = sigmoid(z)
+    g = z_s * (1 - z_s)
 
 # =============================================================
     
